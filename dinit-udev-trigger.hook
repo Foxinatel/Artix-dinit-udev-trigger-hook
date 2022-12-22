@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type      = Path
+Target    = etc/dinit.d/*
+
+[Action]
+Description = Replace udev-settle with udev-trigger for faster boot times
+Exec = /usr/bin/xargs /usr/share/libalpm/scripts/dinit-udev-trigger
+When = PostTransaction
+NeedsTargets

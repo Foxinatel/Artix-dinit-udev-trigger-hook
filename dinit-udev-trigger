@@ -1,0 +1,6 @@
+#!/bin/sh
+for TARGET in $@; do
+  if [ -f $TARGET ]; then
+    /usr/bin/sed -i "s/udev-settle/udev-trigger/" $TARGET
+  fi
+done
